@@ -4,17 +4,18 @@ import { getStories } from "./axios";
 import Pagination from "./Pagination";
 import Loader from "./Loader";
 
-function New() {
+function StoriesId({type:{id,type}}) {
+
   const [loading, setLoading] = useState(true);
   const [storyId, setStoryId] = useState([]);
   const [pagination, setPagination] = useState({ start: 0, end: showPerPage });
 
   useEffect(() => {
-    getStories("new").then((ids) => {
+    getStories(type).then((ids) => {
       setLoading(false);
       setStoryId(ids);
     });
-  }, []);
+  }, [type]);
 
   const showPerPage = 10;
   const pageCount = Math.ceil(storyId.length / showPerPage);
@@ -46,4 +47,4 @@ function New() {
   );
 }
 
-export default New;
+export default StoriesId;
