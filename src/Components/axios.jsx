@@ -17,17 +17,6 @@ export const getStories = async(type) =>{
 };
 
 
-// *******************  Get Stories by their Type   ****************************
-export const getStoriesByType = async(type) =>{
-  try{
-    const res = await axios.get(`${baseURL}${type}stories.json`).then(({data}) => data);
-    return res;
-  }
-  catch(err){
-    console.log(`Error is :- ${err}`);
-  }
-};
-
 // ********************  Get Single Story   ***************************
 export const getStory = async(storyId) =>{
   try{
