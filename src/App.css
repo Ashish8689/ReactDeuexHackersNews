@@ -42,6 +42,8 @@
     cursor: pointer;
     color: var(--bold-color);
     font-weight: 700;
+    border:none;
+    text-transform: capitalize;
     text-decoration: none;
 }
 

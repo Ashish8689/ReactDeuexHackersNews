@@ -1,16 +1,19 @@
 import React from 'react'
-import {Link, useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-function NavigationLinks({type,link}) {
+function NavigationLinks({ button: { id, type }, HandleSetArray, Storytype }) {
 
-    const location = useLocation();
+  return (
 
-    return (
-        <Link to={link} className={location.pathname === link ? "button active" : "button" }>
-           {type}
-        </Link>
-        
-    )
+    <Link
+      to={`/${type}`}
+      className={id === Storytype ? "button active" : "button"}
+      onClick={() => HandleSetArray(id)}
+    >
+      {type}
+    </Link>
+
+  );
 }
 
 export default NavigationLinks
