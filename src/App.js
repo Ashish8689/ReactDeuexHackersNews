@@ -39,8 +39,12 @@ function App() {
         </div>
 
         <Switch>
-          <Route path="/" render={() => <Redirect to="/new" />} exact/>
-          <Route path="/:type" component={StoriesId} />
+          <Route
+            path={["/","/:type"]}
+            render={() => <Redirect to="/new" />}
+            exact
+            component={StoriesId}
+          />
         </Switch>
 
         <Footer />

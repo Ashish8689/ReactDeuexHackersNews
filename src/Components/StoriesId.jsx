@@ -11,7 +11,7 @@ function StoriesId() {
   
   const [loading, setLoading] = useState(true);
   const [storyId, setStoryId] = useState([]);
-  const [pagination, setPagination] = useState({ start: 0, end: showPerPage });
+  const [pagination, setPagination] = useState({ start: 0, end: ShowPerPage });
 
 
   useEffect(() => {
@@ -23,13 +23,13 @@ function StoriesId() {
 
 
 
-  const showPerPage = 10;
-  const pageCount = Math.ceil(storyId.length / showPerPage);
+  const ShowPerPage = 10;
+  const PageCount = Math.ceil(storyId.length / ShowPerPage);
 
-  const HandlePagination = (newPageStart, newPageEnd) => {
+  const HandlePagination = (NewPageStart, NewPageEnd) => {
     setPagination({
-      start: newPageStart,
-      end: newPageEnd,
+      start: NewPageStart,
+      end: NewPageEnd,
     });
   };
 
@@ -43,8 +43,8 @@ function StoriesId() {
             <Story key={ids} storyId={ids} />
           ))}
           <Pagination
-            showPerPage={showPerPage}
-            pageCount={pageCount}
+            ShowPerPage={ShowPerPage}
+            PageCount={PageCount}
             HandlePagination={HandlePagination}
           />
         </React.Fragment>

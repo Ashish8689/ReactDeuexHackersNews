@@ -11,6 +11,7 @@ function Story({ storyId }) {
     });
   }, [storyId]);
 
+
   return (
     <div className="story-block">
       <a href={story.url} target="_blank">
