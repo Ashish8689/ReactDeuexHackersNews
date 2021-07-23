@@ -7,13 +7,10 @@ function Story({ storyId }) {
 
   useEffect(() => {
     getStory(storyId).then((data) => {
-      if (data && data.url) {
         setStory(data);
-      }
     });
   }, [storyId]);
 
-  // console.log(story);
 
   return (
     <div className="story-block">
@@ -24,7 +21,7 @@ function Story({ storyId }) {
             <h4>
               <img src={Time} alt={story.title} />
               <span>
-                {new Date(story.time).getMinutes().toLocaleString()} min ago
+                {new Date(story.time).getMinutes()} min ago
               </span>
             </h4>{" "}
             | <h5>12 comments </h5>
